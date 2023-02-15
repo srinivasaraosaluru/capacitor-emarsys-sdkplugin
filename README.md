@@ -14,6 +14,9 @@ npx cap sync
 <docgen-index>
 
 * [`echo(...)`](#echo)
+* [`addListener('pushMessageEvent', ...)`](#addlistenerpushmessageevent)
+* [`getUUID(...)`](#getuuid)
+* [Interfaces](#interfaces)
 
 </docgen-index>
 
@@ -33,5 +36,54 @@ echo(options: { value: string; }) => Promise<{ value: string; }>
 **Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
 
 --------------------
+
+
+### addListener('pushMessageEvent', ...)
+
+```typescript
+addListener(eventName: 'pushMessageEvent', listenerFunc: (event: PushMessageEvent) => void) => Promise<PluginListenerHandle> & PluginListenerHandle
+```
+
+| Param              | Type                                                                              |
+| ------------------ | --------------------------------------------------------------------------------- |
+| **`eventName`**    | <code>'pushMessageEvent'</code>                                                   |
+| **`listenerFunc`** | <code>(event: <a href="#pushmessageevent">PushMessageEvent</a>) =&gt; void</code> |
+
+**Returns:** <code>Promise&lt;<a href="#pluginlistenerhandle">PluginListenerHandle</a>&gt; & <a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
+
+--------------------
+
+
+### getUUID(...)
+
+```typescript
+getUUID(value: string) => Promise<{ value: string; }>
+```
+
+| Param       | Type                |
+| ----------- | ------------------- |
+| **`value`** | <code>string</code> |
+
+**Returns:** <code>Promise&lt;{ value: string; }&gt;</code>
+
+--------------------
+
+
+### Interfaces
+
+
+#### PluginListenerHandle
+
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
+
+
+#### PushMessageEvent
+
+| Prop            | Type                                           | Since |
+| --------------- | ---------------------------------------------- | ----- |
+| **`eventName`** | <code>string</code>                            | 1.0.0 |
+| **`data`**      | <code>{ key: string; value: string; }[]</code> | 1.0.0 |
 
 </docgen-api>

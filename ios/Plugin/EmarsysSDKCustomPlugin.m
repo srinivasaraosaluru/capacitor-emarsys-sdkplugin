@@ -5,4 +5,6 @@
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
 CAP_PLUGIN(EmarsysSDKCustomPlugin, "EmarsysSDKCustom",
            CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(getUUID, CAPPluginReturnPromise);
+                    
 )

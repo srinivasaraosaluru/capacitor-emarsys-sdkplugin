@@ -7,4 +7,8 @@ export class EmarsysSDKCustomWeb extends WebPlugin implements EmarsysSDKCustomPl
     console.log('ECHO', options);
     return options;
   }
+  async getUUID(value: string): Promise<{ value: string }> {
+    console.log('ECHO', value);
+    return {value:value};
+  }
 }
