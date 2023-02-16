@@ -6,5 +6,6 @@
 CAP_PLUGIN(EmarsysSDKCustomPlugin, "EmarsysSDKCustom",
            CAP_PLUGIN_METHOD(echo, CAPPluginReturnPromise);
            CAP_PLUGIN_METHOD(getUUID, CAPPluginReturnPromise);
+           CAP_PLUGIN_METHOD(setContact, CAPPluginReturnPromise);
                     
 )

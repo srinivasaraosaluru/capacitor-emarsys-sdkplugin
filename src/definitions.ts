@@ -1,5 +1,8 @@
 /// <reference types="@capacitor/cli" />
 
+import type {
+  SetContactOptions
+} from './interfaces/base';
 import type { PluginListenerHandle } from '@capacitor/core';
 
 import type { PushMessageEvent } from './interfaces/push';
@@ -13,6 +16,8 @@ export interface EmarsysSDKCustomPlugin {
   ): Promise<PluginListenerHandle> & PluginListenerHandle;
 
   getUUID(value: string): Promise<{ value: string }>;
+
+  setContact(options: SetContactOptions): Promise<void>;
   
 
 }

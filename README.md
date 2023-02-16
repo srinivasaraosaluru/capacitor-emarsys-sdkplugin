@@ -16,6 +16,7 @@ npx cap sync
 * [`echo(...)`](#echo)
 * [`addListener('pushMessageEvent', ...)`](#addlistenerpushmessageevent)
 * [`getUUID(...)`](#getuuid)
+* [`setContact(...)`](#setcontact)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -69,6 +70,19 @@ getUUID(value: string) => Promise<{ value: string; }>
 --------------------
 
 
+### setContact(...)
+
+```typescript
+setContact(options: SetContactOptions) => Promise<void>
+```
+
+| Param         | Type                                                            |
+| ------------- | --------------------------------------------------------------- |
+| **`options`** | <code><a href="#setcontactoptions">SetContactOptions</a></code> |
+
+--------------------
+
+
 ### Interfaces
 
 
@@ -85,5 +99,12 @@ getUUID(value: string) => Promise<{ value: string; }>
 | --------------- | ---------------------------------------------- | ----- |
 | **`eventName`** | <code>string</code>                            | 1.0.0 |
 | **`data`**      | <code>{ key: string; value: string; }[]</code> | 1.0.0 |
+
+
+#### SetContactOptions
+
+| Prop                    | Type                | Since |
+| ----------------------- | ------------------- | ----- |
+| **`contactFieldValue`** | <code>string</code> | 1.0.0 |
 
 </docgen-api>
