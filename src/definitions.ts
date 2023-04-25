@@ -5,9 +5,10 @@ import type {
 } from './interfaces/base';
 import type { PluginListenerHandle } from '@capacitor/core';
 
-import type { PushMessageEvent } from './interfaces/push';
+import type { PushMessageEvent, TokenResult } from './interfaces/push';
 
 export interface EmarsysSDKCustomPlugin {
+  
   echo(options: { value: string }): Promise<{ value: string }>;
   
   addListener(
@@ -17,7 +18,23 @@ export interface EmarsysSDKCustomPlugin {
 
   getUUID(value: string): Promise<{ value: string }>;
 
+  
+  requestPermissions(): Promise<PermissionStatus>;
+
+  checkPermissions(): Promise<PermissionStatus>;
+
   setContact(options: SetContactOptions): Promise<void>;
+
+  getPushToken(): Promise<TokenResult>;
+
+  register(): Promise<TokenResult>;
+
+  checkPermissions(): Promise<PermissionStatus>;
+
+  clearContact(options: SetContactOptions): Promise<void>;
+
+
+
   
 
 }

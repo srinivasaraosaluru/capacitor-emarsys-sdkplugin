@@ -16,8 +16,15 @@ npx cap sync
 * [`echo(...)`](#echo)
 * [`addListener('pushMessageEvent', ...)`](#addlistenerpushmessageevent)
 * [`getUUID(...)`](#getuuid)
+* [`requestPermissions()`](#requestpermissions)
+* [`checkPermissions()`](#checkpermissions)
 * [`setContact(...)`](#setcontact)
+* [`getPushToken()`](#getpushtoken)
+* [`register()`](#register)
+* [`checkPermissions()`](#checkpermissions)
+* [`clearContact(...)`](#clearcontact)
 * [Interfaces](#interfaces)
+* [Type Aliases](#type-aliases)
 
 </docgen-index>
 
@@ -70,10 +77,78 @@ getUUID(value: string) => Promise<{ value: string; }>
 --------------------
 
 
+### requestPermissions()
+
+```typescript
+requestPermissions() => Promise<PermissionStatus>
+```
+
+**Returns:** <code>Promise&lt;any&gt;</code>
+
+--------------------
+
+
+### checkPermissions()
+
+```typescript
+checkPermissions() => Promise<PermissionStatus>
+```
+
+**Returns:** <code>Promise&lt;any&gt;</code>
+
+--------------------
+
+
 ### setContact(...)
 
 ```typescript
 setContact(options: SetContactOptions) => Promise<void>
+```
+
+| Param         | Type                                                            |
+| ------------- | --------------------------------------------------------------- |
+| **`options`** | <code><a href="#setcontactoptions">SetContactOptions</a></code> |
+
+--------------------
+
+
+### getPushToken()
+
+```typescript
+getPushToken() => Promise<TokenResult>
+```
+
+**Returns:** <code>Promise&lt;<a href="#tokenresult">TokenResult</a>&gt;</code>
+
+--------------------
+
+
+### register()
+
+```typescript
+register() => Promise<TokenResult>
+```
+
+**Returns:** <code>Promise&lt;<a href="#tokenresult">TokenResult</a>&gt;</code>
+
+--------------------
+
+
+### checkPermissions()
+
+```typescript
+checkPermissions() => Promise<PermissionStatus>
+```
+
+**Returns:** <code>Promise&lt;any&gt;</code>
+
+--------------------
+
+
+### clearContact(...)
+
+```typescript
+clearContact(options: SetContactOptions) => Promise<void>
 ```
 
 | Param         | Type                                                            |
@@ -101,10 +176,32 @@ setContact(options: SetContactOptions) => Promise<void>
 | **`data`**      | <code>{ key: string; value: string; }[]</code> | 1.0.0 |
 
 
+#### PermissionStatus
+
+| Prop          | Type                                                        | Since |
+| ------------- | ----------------------------------------------------------- | ----- |
+| **`receive`** | <code><a href="#permissionstate">PermissionState</a></code> | 1.0.0 |
+
+
 #### SetContactOptions
 
 | Prop                    | Type                | Since |
 | ----------------------- | ------------------- | ----- |
 | **`contactFieldValue`** | <code>string</code> | 1.0.0 |
+
+
+#### TokenResult
+
+| Prop        | Type                | Since |
+| ----------- | ------------------- | ----- |
+| **`token`** | <code>string</code> | 1.0.0 |
+
+
+### Type Aliases
+
+
+#### PermissionState
+
+<code>'prompt' | 'prompt-with-rationale' | 'granted' | 'denied'</code>
 
 </docgen-api>
